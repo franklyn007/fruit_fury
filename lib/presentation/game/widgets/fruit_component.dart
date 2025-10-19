@@ -10,11 +10,11 @@ import 'dart:ui';
 import 'package:flame/components.dart';
 import 'package:flame/image_composition.dart' as composition;
 import 'package:flutter/foundation.dart';
-import 'package:fruit_cutting_game/common/helpers/app_utils.dart';
-import 'package:fruit_cutting_game/core/configs/constants/app_configs.dart';
-import 'package:fruit_cutting_game/data/models/fruit_model.dart';
-import 'package:fruit_cutting_game/main_router_game.dart';
-import 'package:fruit_cutting_game/presentation/game/game.dart';
+import 'package:fruit_fury/common/helpers/app_utils.dart';
+import 'package:fruit_fury/core/configs/constants/app_configs.dart';
+import 'package:fruit_fury/data/models/fruit_model.dart';
+import 'package:fruit_fury/main_router_game.dart';
+import 'package:fruit_fury/presentation/game/game.dart';
 
 /// A component representing a fruit in the game.
 /// This class manages the fruit's behavior, movement, and interactions.
@@ -109,7 +109,7 @@ class FruitComponent extends SpriteComponent with HasGameReference<MainRouterGam
     // NOTE: Removed fruit splitting feature because of unfixed 'toImageSync' bug on Flutter SDK
     // check here: https://github.com/flutter/flutter/issues/144451
     //
-    if (game.isDesktop) {
+    if (game.isDesktop || !game.isDesktop) {
       // 1. Calculate the angle between the touch point and the fruit’s center.
       // This angle helps determine the slicing direction.
       // Formula: `atan2(dy, dx)` where `dy = touchPoint.y - center.y` and `dx = touchPoint.x - center.x`.
@@ -311,3 +311,4 @@ class FruitComponent extends SpriteComponent with HasGameReference<MainRouterGam
     return await picture.toImage(sourceRect.width.toInt(), sourceRect.height.toInt());
   }
 }
+
