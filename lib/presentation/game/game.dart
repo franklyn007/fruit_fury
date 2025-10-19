@@ -12,16 +12,16 @@ import 'package:flame/events.dart';
 import 'package:flame/extensions.dart';
 import 'package:flame/text.dart';
 import 'package:flame_audio/flame_audio.dart';
-import 'package:fruit_cutting_game/common/widgets/button/back_button.dart';
-import 'package:fruit_cutting_game/common/widgets/button/pause_button.dart';
-import 'package:fruit_cutting_game/core/configs/assets/app_sfx.dart';
-import 'package:fruit_cutting_game/core/configs/theme/app_colors.dart';
-import 'package:fruit_cutting_game/presentation/game/widgets/fruit_component.dart';
-import 'package:fruit_cutting_game/core/configs/constants/app_configs.dart';
-import 'package:fruit_cutting_game/core/configs/constants/app_router.dart';
-import 'package:fruit_cutting_game/main_router_game.dart';
-import 'package:fruit_cutting_game/presentation/game/widgets/fruit_slice_component.dart';
-import 'package:fruit_cutting_game/presentation/game/widgets/slice_component.dart';
+import 'package:fruit_fury/common/widgets/button/back_button.dart';
+import 'package:fruit_fury/common/widgets/button/pause_button.dart';
+import 'package:fruit_fury/core/configs/assets/app_sfx.dart';
+import 'package:fruit_fury/core/configs/theme/app_colors.dart';
+import 'package:fruit_fury/presentation/game/widgets/fruit_component.dart';
+import 'package:fruit_fury/core/configs/constants/app_configs.dart';
+import 'package:fruit_fury/core/configs/constants/app_router.dart';
+import 'package:fruit_fury/main_router_game.dart';
+import 'package:fruit_fury/presentation/game/widgets/fruit_slice_component.dart';
+import 'package:fruit_fury/presentation/game/widgets/slice_component.dart';
 
 /// The main game page where the game play happens.
 class GamePage extends Component with DragCallbacks, HasGameReference<MainRouterGame> {
@@ -50,9 +50,19 @@ class GamePage extends Component with DragCallbacks, HasGameReference<MainRouter
   late SliceTrailComponent sliceTrail;
   final List<String> sliceSounds = [AppSfx.sfxChopping, AppSfx.sfxCut];
 
+  late AudioPool bushCut_AudioPool;
+  late AudioPool swordCut_AudioPool;
+  bool permitSliceSfx = true;
+
+  @override
+  Future<void> onLoad() async {
+    bushCut_AudioPool = await FlameAudio.createPool(AppSfx.sfxCut, minPlayers: 0, maxPlayers: 1,);
+    swordCut_AudioPool = await FlameAudio.createPool(AppSfx.sfxChopping, minPlayers: 0, maxPlayers: 1,);
+  }
+
   /// Called when the component is added to the game.
   @override
-  void onMount() {
+  Future<void> onMount() async {
     super.onMount();
 
     // Initialize game variables
@@ -238,10 +248,11 @@ class GamePage extends Component with DragCallbacks, HasGameReference<MainRouter
     componentsAtPoint(event.canvasStartPosition).forEach((element) {
       if (element is FruitComponent) {
         if (element.canDragOnShape) {
-          game.isDesktop ? onFruitSliced(sliceTrail) : null;
+          onFruitSliced(sliceTrail);
           element.touchAtPoint(event.canvasStartPosition);
-          game.isDesktop ? game.add(FruitSliceComponent(event.canvasStartPosition)) : null;
-          game.isDesktop ? playRandomSliceSound() : null;
+          game.add(FruitSliceComponent(event.canvasStartPosition));
+          playRandomSliceSound();
+          //game.isDesktop ? playRandomSliceSound() : playRandomSliceSound();
         }
       }
     });
@@ -317,8 +328,26 @@ class GamePage extends Component with DragCallbacks, HasGameReference<MainRouter
   }
 
   void playRandomSliceSound() {
-    String selectedSound = sliceSounds[random.nextInt(sliceSounds.length)];
-    FlameAudio.play(selectedSound, volume: 0.5);
+    int rand = random.nextInt(sliceSounds.length);
+    String selectedSound = sliceSounds[rand];
+    if(game.isDesktop){
+      FlameAudio.play(selectedSound, volume: 0.5);
+    }else{
+      //Upgraded this from FlameAudio to AudioPool inorder to stop audio lagging.
+      //The continuous drag when fruit is being sliced cause audio to replay
+      //Adding  a delay before re-permitting sound to play again fixed this.
+      if(permitSliceSfx){
+        if(rand == 0){
+          bushCut_AudioPool.start();
+        } else{
+          swordCut_AudioPool.start();
+        }
+        permitSliceSfx = false;
+        Future.delayed(Duration(milliseconds: 100), () async {
+          permitSliceSfx = true;
+        });
+      }
+    }
   }
 
   void generateFruitTimings() {
