@@ -6,7 +6,6 @@
 
 import 'dart:async';
 // ignore: avoid_web_libraries_in_flutter
-import 'dart:html' as html;
 import 'dart:io';
 import 'dart:ui';
 
@@ -17,12 +16,12 @@ import 'package:flame/game.dart';
 import 'package:flame/rendering.dart';
 import 'package:flame/text.dart';
 import 'package:flutter/foundation.dart';
-import 'package:fruit_cutting_game/common/helpers/app_save_action.dart';
-import 'package:fruit_cutting_game/common/widgets/button/rounded_button.dart';
-import 'package:fruit_cutting_game/core/configs/constants/app_router.dart';
-import 'package:fruit_cutting_game/core/configs/theme/app_colors.dart';
-import 'package:fruit_cutting_game/main_router_game.dart';
-import 'package:fruit_cutting_game/presentation/game/game.dart';
+import 'package:fruit_fury/common/helpers/app_save_action.dart';
+import 'package:fruit_fury/common/widgets/button/rounded_button.dart';
+import 'package:fruit_fury/core/configs/constants/app_router.dart';
+import 'package:fruit_fury/core/configs/theme/app_colors.dart';
+import 'package:fruit_fury/main_router_game.dart';
+import 'package:fruit_fury/presentation/game/game.dart';
 import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -117,7 +116,6 @@ class GameOverPage extends Component with TapCallbacks, HasGameReference<MainRou
       text: "Leaderboard",
       anchor: Anchor.center,
       onPressed: () async {
-        await captureAndSaveImage();
         // Save your score
         final GitHubService gitHubService = GitHubService(
           time: _textTimeComponent.text,
@@ -225,38 +223,5 @@ class GameOverPage extends Component with TapCallbacks, HasGameReference<MainRou
       ..pop() // Go back to the previous route.
       ..pushNamed(AppRouter.homePage, replace: true); // Push the home page route.
   }
-
-  Future<void> captureAndSaveImage() async {
-    try {
-      final PictureRecorder recorder = PictureRecorder();
-      final Rect rect = Rect.fromLTWH(0.0, 0.0, game.size.x, game.size.y);
-      final Canvas c = Canvas(recorder, rect);
-
-      game.render(c);
-
-      final Image image =
-          await recorder.endRecording().toImage(game.size.x.toInt(), game.size.y.toInt());
-      ByteData? byteData = await image.toByteData(format: ImageByteFormat.png);
-      Uint8List pngBytes = byteData!.buffer.asUint8List();
-
-      if (kIsWeb) {
-        final blob = html.Blob([pngBytes]);
-        final url = html.Url.createObjectUrlFromBlob(blob);
-        final anchor = html.AnchorElement(href: url)
-          ..setAttribute("download", "screenshot.png")
-          ..click();
-        html.Url.revokeObjectUrl(url);
-      } else {
-        final directory = await getApplicationDocumentsDirectory();
-        final imagePath = '${directory.path}/screenshot.png';
-        final imageFile = File(imagePath);
-        await imageFile.writeAsBytes(pngBytes);
-      }
-      // ignore: empty_catches
-    } catch (e) {
-      if (kDebugMode) {
-        print(e.toString());
-      }
-    }
-  }
 }
+
