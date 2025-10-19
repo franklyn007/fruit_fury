@@ -203,4 +203,7 @@ class GameVictoryPage extends Component with TapCallbacks, HasGameReference<Main
 
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)

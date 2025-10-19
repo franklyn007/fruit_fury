@@ -7,7 +7,11 @@
 import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/game.dart' hide Game;
+<<<<<<< HEAD
 import 'package:fruit_cutting_game/main_router_game.dart';
+=======
+import 'package:fruit_fury/main_router_game.dart';
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)
 import 'web_title_switcher_stub.dart' if (dart.library.html) 'web_title_switcher_web.dart';
 
 void main() {

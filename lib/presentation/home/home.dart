@@ -6,6 +6,7 @@
 
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:fruit_cutting_game/common/widgets/button/rounded_button.dart';
 import 'package:fruit_cutting_game/common/widgets/text/simple_center_text.dart';
 import 'package:fruit_cutting_game/core/configs/assets/app_images.dart';
@@ -14,6 +15,16 @@ import 'package:fruit_cutting_game/core/configs/theme/app_colors.dart';
 import 'package:fruit_cutting_game/main_router_game.dart';
 import 'package:fruit_cutting_game/presentation/home/widgets/game_mode_component.dart';
 import 'package:fruit_cutting_game/presentation/home/widgets/tutorial_fruit_component.dart';
+=======
+import 'package:fruit_fury/common/widgets/button/rounded_button.dart';
+import 'package:fruit_fury/common/widgets/text/simple_center_text.dart';
+import 'package:fruit_fury/core/configs/assets/app_images.dart';
+import 'package:fruit_fury/core/configs/constants/app_router.dart';
+import 'package:fruit_fury/core/configs/theme/app_colors.dart';
+import 'package:fruit_fury/main_router_game.dart';
+import 'package:fruit_fury/presentation/home/widgets/game_mode_component.dart';
+import 'package:fruit_fury/presentation/home/widgets/tutorial_fruit_component.dart';
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)
 
 class HomePage extends Component with HasGameReference<MainRouterGame> {
   late final RoundedButton _button;
@@ -86,7 +97,11 @@ class HomePage extends Component with HasGameReference<MainRouterGame> {
         _button = RoundedButton(
           text: 'Start',
           onPressed: () {
+<<<<<<< HEAD
             game.startBgmMusic();
+=======
+            //game.startBgmMusic();
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)
             game.router.pushNamed(AppRouter.gamePage);
           },
           bgColor: AppColors.blue,

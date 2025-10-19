@@ -224,4 +224,7 @@ class GameOverPage extends Component with TapCallbacks, HasGameReference<MainRou
       ..pushNamed(AppRouter.homePage, replace: true); // Push the home page route.
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)

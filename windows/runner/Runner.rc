@@ -89,6 +89,7 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
+<<<<<<< HEAD
             VALUE "CompanyName", "com.example" "\0"
             VALUE "FileDescription", "fruit_cutting_game" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
@@ -96,6 +97,15 @@ BEGIN
             VALUE "LegalCopyright", "Copyright (C) 2024 com.chunhthanhde. All rights reserved." "\0"
             VALUE "OriginalFilename", "fruit_cutting_game.exe" "\0"
             VALUE "ProductName", "fruit_cutting_game" "\0"
+=======
+            VALUE "CompanyName", "store.imastudio" "\0"
+            VALUE "FileDescription", "fruit_fury" "\0"
+            VALUE "FileVersion", VERSION_AS_STRING "\0"
+            VALUE "InternalName", "fruit_fury" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2025 store.imastudio. All rights reserved." "\0"
+            VALUE "OriginalFilename", "fruit_fury.exe" "\0"
+            VALUE "ProductName", "fruit_fury" "\0"
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

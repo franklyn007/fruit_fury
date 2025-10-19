@@ -7,7 +7,11 @@
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:fruit_cutting_game/core/configs/theme/app_colors.dart';
+=======
+import 'package:fruit_fury/core/configs/theme/app_colors.dart';
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)
 
 /// A simple button component that can be tapped.
 /// The button is built using `PositionComponent` from the Flame framework

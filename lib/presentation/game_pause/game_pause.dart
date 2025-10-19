@@ -10,8 +10,13 @@ import 'package:flame/events.dart';
 import 'package:flame/game.dart' hide Game; // Hides the Game class to avoid naming conflicts.
 import 'package:flame/rendering.dart';
 import 'package:flame/text.dart';
+<<<<<<< HEAD
 import 'package:fruit_cutting_game/core/configs/theme/app_colors.dart';
 import 'package:fruit_cutting_game/main_router_game.dart';
+=======
+import 'package:fruit_fury/core/configs/theme/app_colors.dart';
+import 'package:fruit_fury/main_router_game.dart';
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)
 
 /// This class represents the route for the pause screen in the game.
 class PauseRoute extends Route {

@@ -8,9 +8,15 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:fruit_cutting_game/core/configs/assets/app_images.dart';
 import 'package:fruit_cutting_game/core/configs/theme/app_colors.dart';
 import 'package:fruit_cutting_game/main_router_game.dart';
+=======
+import 'package:fruit_fury/core/configs/assets/app_images.dart';
+import 'package:fruit_fury/core/configs/theme/app_colors.dart';
+import 'package:fruit_fury/main_router_game.dart';
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)
 
 // InteractiveButtonComponent represents a button with an image and text that can be interacted with.
 class InteractiveButtonComponent extends PositionComponent

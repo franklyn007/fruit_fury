@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
+<<<<<<< HEAD
         android:label="fruit_cutting_game"
+=======
+        android:label="fruit_fury"
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

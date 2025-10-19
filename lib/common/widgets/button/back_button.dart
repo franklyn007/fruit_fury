@@ -6,8 +6,13 @@
 
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:fruit_cutting_game/common/widgets/button/simple_button.dart';
 import 'package:fruit_cutting_game/main_router_game.dart';
+=======
+import 'package:fruit_fury/common/widgets/button/simple_button.dart';
+import 'package:fruit_fury/main_router_game.dart';
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)
 
 /// A custom back button component that inherits from `SimpleButton`.
 /// This button is designed to go back (pop) in the game's navigation stack

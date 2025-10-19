@@ -6,8 +6,13 @@
 
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:fruit_cutting_game/core/configs/constants/app_router.dart';
 import 'package:fruit_cutting_game/main_router_game.dart';
+=======
+import 'package:fruit_fury/core/configs/constants/app_router.dart';
+import 'package:fruit_fury/main_router_game.dart';
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)
 import 'simple_button.dart';
 
 // Custom Pause Button for the game

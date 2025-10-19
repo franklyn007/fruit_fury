@@ -12,6 +12,7 @@ import 'package:flame/game.dart';
 import 'package:flame/parallax.dart';
 import 'package:flame_audio/flame_audio.dart';
 
+<<<<<<< HEAD
 import 'package:fruit_cutting_game/core/configs/assets/app_images.dart';
 import 'package:fruit_cutting_game/core/configs/assets/app_sfx.dart';
 import 'package:fruit_cutting_game/core/configs/constants/app_configs.dart';
@@ -22,6 +23,18 @@ import 'package:fruit_cutting_game/presentation/game_over/game_over.dart';
 import 'package:fruit_cutting_game/presentation/game_pause/game_pause.dart';
 import 'package:fruit_cutting_game/presentation/game_victory/game_victory.dart';
 import 'package:fruit_cutting_game/presentation/home/home.dart';
+=======
+import 'package:fruit_fury/core/configs/assets/app_images.dart';
+import 'package:fruit_fury/core/configs/assets/app_sfx.dart';
+import 'package:fruit_fury/core/configs/constants/app_configs.dart';
+import 'package:fruit_fury/core/configs/constants/app_router.dart';
+import 'package:fruit_fury/data/models/fruit_model.dart';
+import 'package:fruit_fury/presentation/game/game.dart';
+import 'package:fruit_fury/presentation/game_over/game_over.dart';
+import 'package:fruit_fury/presentation/game_pause/game_pause.dart';
+import 'package:fruit_fury/presentation/game_victory/game_victory.dart';
+import 'package:fruit_fury/presentation/home/home.dart';
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)
 
 /// Main game class that extends FlameGame
 class MainRouterGame extends FlameGame with KeyboardEvents {

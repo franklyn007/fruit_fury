@@ -311,4 +311,7 @@ class FruitComponent extends SpriteComponent with HasGameReference<MainRouterGam
     return await picture.toImage(sourceRect.width.toInt(), sourceRect.height.toInt());
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)

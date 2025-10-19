@@ -5,6 +5,7 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
+<<<<<<< HEAD
 PRODUCT_NAME = fruit_cutting_game
 
 // The application's bundle identifier
@@ -12,3 +13,12 @@ PRODUCT_BUNDLE_IDENTIFIER = com.chunhthanhde.fruitCuttingGame
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2024 com.chunhthanhde. All rights reserved.
+=======
+PRODUCT_NAME = fruit_fury
+
+// The application's bundle identifier
+PRODUCT_BUNDLE_IDENTIFIER = store.imastudio.fruitFury
+
+// The copyright displayed in application information
+PRODUCT_COPYRIGHT = Copyright © 2025 store.imastudio. All rights reserved.
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)

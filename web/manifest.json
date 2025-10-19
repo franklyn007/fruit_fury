@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "fruit_cutting_game",
     "short_name": "fruit_cutting_game",
     "start_url": ".",
@@ -6,6 +7,15 @@
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
     "description": "A new Flutter project.",
+=======
+    "name": "fruit_fury",
+    "short_name": "fruit_fury",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#ffffff",
+    "description": "A fruit slashing game made with Flutter.",
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

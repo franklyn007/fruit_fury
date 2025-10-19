@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎮 Flutter Fruit Cutting Game
 
 A fun and interactive **Fruit Cutting Game** built using Flutter.
@@ -104,3 +105,21 @@ With its engaging fruit-cutting mechanics, **Flutter Fruit Cutting Game** is a p
 #### Made by Flutter <img src="https://raw.githubusercontent.com/Flutter-Journey/Fruit-Cutting-Game/refs/heads/main/assets/icons/flutter_icon.png" height="15"> with Love ❤️ | Developed by [ChunhThanhDe](https://github.com/chunhthanhde)
 
 </div>
+=======
+# fruit_fury
+
+A fruit slashing game made with Flutter.
+
+## Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+>>>>>>> 6136fed (Update web_title_switcher_web.dart, Update fruit_component.dart, Update game_victory.dart and Update game_over.dart)
